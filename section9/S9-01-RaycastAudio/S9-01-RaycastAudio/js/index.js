@@ -120,7 +120,7 @@ function render() {
       INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
       INTERSECTED.material.emissive.setHex( 0xff0000 );
 
-      audioLoader.load( 'audio/Diploship-Fly.wav', function( buffer ) {
+      audioLoader.load( 'audio/123.mp3', function( buffer ) {
         sound.setBuffer( buffer );
         sound.setLoop( false );
         sound.setVolume( 0.5 );
