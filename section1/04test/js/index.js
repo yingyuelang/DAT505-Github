@@ -1,6 +1,6 @@
 //Global variables
 var scene, camera, renderer;
-var geometry1,geometry2, material,material2, mesh1,mesh2,;
+var geometry1,geometry2, material,material2, mesh1,mesh2;
 var light1, light2;
 
 function init(){
@@ -45,8 +45,8 @@ var render = function () {
   requestAnimationFrame( render );
   mesh1.rotation.x += 0.01;
   mesh1.rotation.y += 0.01;
-  mesh2.rotation.x += 0.02;
-  mesh2.rotation.y += 0.02;
+  //mesh2.rotation.x += 0.02;
+  //mesh2.rotation.y += 0.02;
   renderer.setClearColor("#2A3867");
   renderer.render(scene, camera);
 };

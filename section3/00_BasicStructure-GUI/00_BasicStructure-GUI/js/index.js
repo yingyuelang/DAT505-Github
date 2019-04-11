@@ -10,7 +10,7 @@ var de2ra = function(degree) {
 };
 
 init();
-render();
+//render();
 
 function init(){
   // Create an empty scene --------------------------
@@ -165,3 +165,4 @@ function lightingSystem(){
   spotLight.shadow.camera.fov = 45;
   scene.add( spotLight );
 }
+render();

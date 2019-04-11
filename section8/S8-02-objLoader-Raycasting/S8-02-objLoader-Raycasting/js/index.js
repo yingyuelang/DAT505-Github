@@ -6,7 +6,9 @@ var radius = 100, theta = 0;
 var object;
 
 var objects = [];
-
+var listener = new THREE.AudioListener();
+var sound = new THREE.Audio( listener );
+var audioLoader = new THREE.AudioLoader();
 init();
 animate();
 
@@ -15,7 +17,7 @@ function init() {
   document.body.appendChild( container );
 
   camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 10000 );
-
+  camera.add( listener );
   scene = new THREE.Scene();
   scene.background = new THREE.Color( 0xf0f0f0 );
 
@@ -106,6 +108,13 @@ function render() {
 
   //Find intersections
   raycaster.setFromCamera( mouse, camera );
+
+      audioLoader.load( 'audio/123.mp3', function( buffer ) {
+        sound.setBuffer( buffer );
+        sound.setLoop( false );
+        sound.setVolume( 0.5 );
+        sound.play();
+      });
   //var intersects = raycaster.intersectObjects( scene.children );
 
 /*  var intersects = raycaster.intersectObjects( objects, true );
