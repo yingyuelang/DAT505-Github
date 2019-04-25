@@ -3,14 +3,17 @@
 ## name: XIERUOBING
 
 
-## The content of the finial project
+## The content of my finial project ----- Crane's Gratitude
   the project is an interactive picture book. It tells a story about a crane how to help a kind couple which saved it before. It is a tales of Asian that I listened in my childhood.
 
   In this project, peope can read a story easily by it's picture. There are 6 scene in this project so that when you use this project you may find it is also like real book. Of course, these is a big difference between this project and real book is that there are some simple lines appear if your mouse move on the character. i believe these will help people more easier to read this book. Especially for children.
 
+  The reason I make this project is because I found it is boring for people especially children to read a book full of words and without no pictures. I want more children interested in reading books.
+
   there is a picture which show the part about interactive.
   ![screen](https://github.com/yingyuelang/DAT505-Github/blob/master/finial%20project/images/1.png)
     ![screen](https://github.com/yingyuelang/DAT505-Github/blob/master/finial%20project/images/2.png)
+
 
 
 ### The background story of this interactive picture book
@@ -22,7 +25,7 @@
 
   After the couple adopt the girl, they found that the girl is such clever and hard-working. Especially the clothes she made. The couple never see such beautiful clothes before. The girl asked them to sold these clothes and then they become richer than before.
 
-  Only one thing is very strange is that the girl forbade everyone to see how she make these clothes even the kind couple. But the couple was so interested so that one day they peep the girl when she was made clothes. Surprisingly, there was no girl in the room but a crane, It made clothes out of its feather.
+  Only one thing is very strange is that the girl forbade everyone to see how she make these clothes even the kind couple. But the couple was so interested so that one day they peep the girl when she was making clothes. Surprisingly, there was no girl in the room but a crane, It made clothes out of it's feather.
 
   The husband found that the crane is the crane which he saved that day. The crane found the couple know it’s real appearance so that it told them the reason. The crane is so thanks for the husband and wants to pay back the couple. The crane is spirit and it changed to a girl to help the couple. After the crane tell the couple reason, the crane flied away and never go back.
 
@@ -135,3 +138,12 @@ Of course, the code which control the geometry is also very important.
 The mesh8 and mesh9 is button. The url control what scene you go to after you click on this button
 The mesh10 is the words the story
 The mesh11 is the scene background
+
+
+I also make a cover for this project. You can start to read this picture book when you click the button of start.
+
+There is my project's cover:
+  ![screen](https://github.com/yingyuelang/DAT505-Github/blob/master/finial%20project/images/7.png)
+
+
+  ### Thanks for your reading
