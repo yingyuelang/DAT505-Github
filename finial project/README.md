@@ -27,7 +27,7 @@
   The husband found that the crane is the crane which he saved that day. The crane found the couple know it’s real appearance so that it told them the reason. The crane is so thanks for the husband and wants to pay back the couple. The crane is spirit and it changed to a girl to help the couple. After the crane tell the couple reason, the crane flied away and never go back.
 
 
-## How do i finish this project
+## How do I finish this project
   When I decided to make a an interactive picture book, I draw some sketchs first so that I can know how to make the character and scene's models.
 
   There are some pictures about the scene and character I designed.
@@ -44,32 +44,37 @@
 ## The part of code
 I use a lot of code to control the mouse click event
 For example, in the scene1:
-  function onDocumentMouseMove( event ) {
-  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-  //scene.add(mesh3);
-  console.log(event.clientX);
-  console.log(event.clientY);
-  raycaster.setFromCamera( mouse, camera );
 
-  var intersects = raycaster.intersectObjects(   objects,true );
-  if( intersects.length>0&&event.clientX <300&&event.clientY<600)
-  {scene.add(mesh2);}
- else if
-   (intersects.length>0&&250<event.clientX <400&&800<event.clientY<1200)
-   {scene.add(mesh1)}
-else {scene.remove(mesh1,mesh2)}
 
+
+    function onDocumentMouseMove( event ) {
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    //scene.add(mesh3);
+    console.log(event.clientX);
+    console.log(event.clientY);
+    raycaster.setFromCamera( mouse, camera );
+
+    var intersects = raycaster.intersectObjects(   objects,true );
+    if( intersects.length>0&&event.clientX <300&&event.clientY<600)
+    {scene.add(mesh2);}
+    else if
+    (intersects.length>0&&250<event.clientX <400&&800<event.clientY<1200)
+    {scene.add(mesh1)}
+    else {scene.remove(mesh1,mesh2)}
+
+    }
+
+    function onDocumentMouseDown( event ) {
+      mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+      mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+      raycaster.setFromCamera( mouse, camera );
+
+      var intersects = raycaster.intersectObjects( scene.children );
+      if( intersects.length>0) {
+        top.location =(intersects[0].object.userData.URL);
+      }
 }
 
-  function onDocumentMouseDown( event ) {
-  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-  raycaster.setFromCamera( mouse, camera );
 
-  var intersects = raycaster.intersectObjects( scene.children );
-  if( intersects.length>0) {
-   top.location =(intersects[0].object.userData.URL);
-  }
-
-  }
+the function of mousemove give the picture book
