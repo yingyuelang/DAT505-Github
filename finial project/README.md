@@ -74,7 +74,64 @@ For example, in the scene1:
       if( intersects.length>0) {
         top.location =(intersects[0].object.userData.URL);
       }
-}
+      }
 
 
-the function of mousemove give the picture book
+the function of mousemove give the picture book the effect that if you move your mouse on the
+character, there will be some words on it. This effect makes the picture book can also be a comic book.
+
+the function of mousedown make two PlaneGeometrys become a button. If you click on these buttons, you will go to the last or next scene.
+
+Of course, the code which control the geometry is also very important.
+
+
+
+    function geometry(){
+    geometry = new THREE.PlaneGeometry(70, 70);
+    geometry2 = new THREE.PlaneGeometry(100, 100);
+    geometry3 = new THREE.PlaneGeometry(50, 50);
+    geometry4= new THREE.PlaneGeometry(200,100);
+    geometry5= new THREE.PlaneGeometry(2000,800);
+
+    material = new THREE.MeshBasicMaterial( {  map:texture6,transparent:true } );
+    material2 = new THREE.MeshBasicMaterial( { map:texture,transparent:true   } );
+    material3 = new THREE.MeshBasicMaterial( { map:texture2, color: "#ffffff" } );
+    material4 = new THREE.MeshBasicMaterial( { map:texture3,transparent:true } );
+    material5 = new THREE.MeshBasicMaterial( { map:texture4,transparent:true } );
+    material6= new THREE.MeshBasicMaterial( { map:texture5,transparent:true } );
+    material7= new THREE.MeshBasicMaterial( {  map:texture7,transparent:true } );
+
+
+    mesh1 = new THREE.Mesh( geometry, material7 );
+    mesh1.position.set(80,80,-500);
+    mesh2 = new THREE.Mesh( geometry, material );
+    mesh2.position.set(-200,100,-500);
+
+    mesh8 = new THREE.Mesh( geometry3, material4 );
+    mesh8.userData = { URL: "index.html"};
+    mesh8.position.set(-50,-100,-300);
+    mesh9 = new THREE.Mesh( geometry3, material5 );
+    mesh9.position.set(50,-100,-300);
+    mesh9.userData = { URL: "scene2.html"};
+    mesh10 = new THREE.Mesh( geometry4, material6 );
+    mesh10.position.set(200,100,-400);
+    mesh11 = new THREE.Mesh( geometry5, material3);
+    mesh11.position.set(0,300,-1300);
+
+
+    scene.add( mesh8 );
+    scene.add( mesh9 );
+    scene.add( mesh10 );
+    scene.add( mesh11 );
+
+    light1 = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(light1);
+
+    light2 = new THREE.PointLight(0xffffff, 0.3);
+    scene.add(light2);}
+
+
+
+The mesh8 and mesh9 is button. The url control what scene you go to after you click on this button
+The mesh10 is the words the story
+The mesh11 is the scene background
