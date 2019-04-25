@@ -8,7 +8,7 @@ var geometry5,material3,mesh11,geometry6,mesh12,material7;
 var texture5,material5,texture6,material6;
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
-var objects = [];
+var objects = [];// to add the model into objects
 
 
 function init(){
@@ -23,6 +23,7 @@ function init(){
           texture4=new THREE.TextureLoader().load( 'image/next.png' );
                 texture5=new THREE.TextureLoader().load( 'image/s3.png' );
                     texture6=new THREE.TextureLoader().load( 'image/s3-1.png' );
+                      // to load the texture
   var mtlLoader = new THREE.MTLLoader();
 
 
@@ -150,7 +151,7 @@ function init(){
                 objects.push(mesh5);
               });
             });
-
+        // to load the model
   document.body.appendChild( renderer.domElement );
   document.addEventListener( "mousedown", onDocumentMouseDown, false );
   document.addEventListener( "mousemove", onDocumentMouseMove, false );
@@ -183,16 +184,16 @@ function geometry(){
 
 
 mesh8 = new THREE.Mesh( geometry3, material4 );
-mesh8.userData = { URL: "scene2.html"};
+mesh8.userData = { URL: "scene2.html"};// one of the button
 mesh8.position.set(-50,-70,-300);
 mesh9 = new THREE.Mesh( geometry3, material5 );
 mesh9.position.set(50,-70,-300);
-mesh9.userData = { URL: "scene4.html"};
+mesh9.userData = { URL: "scene4.html"};// one of the button
 
 mesh10 = new THREE.Mesh( geometry4, material6 );
 mesh10.position.set(-100,100,-500);
 mesh11 = new THREE.Mesh( geometry5, material3 );
-mesh11.position.set(0,300,-1500);
+mesh11.position.set(0,300,-1500);// the background
 mesh12 = new THREE.Mesh( geometry6, material7 );
 mesh12.position.set(50,50,-300);
 
@@ -208,6 +209,7 @@ scene.add(mesh11);
 
   light2 = new THREE.PointLight(0xffffff, 0.3);
   scene.add(light2);
+  // the scene's light
 }
 function onDocumentMouseMove( event ) {
   mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
@@ -222,8 +224,7 @@ if
 ( intersects.length>0&&event.clientX <1200&&event.clientY<600) {
  scene.add(mesh12);}
 else {scene.remove(mesh12)}
-  //console.log(intersects);
-  //window.open(intersects[0].object.userData.URL);
+
 }
 
 function onDocumentMouseDown( event ) {
@@ -235,8 +236,7 @@ function onDocumentMouseDown( event ) {
   var intersects = raycaster.intersectObjects( scene.children );
  if( intersects.length>0) {
    top.location =(intersects[0].object.userData.URL);
-//  top.location ="homepage.html";
-  //scene.add(mesh3);
+// when you click on the button you can go to another scene
   }
 
 }
@@ -244,20 +244,13 @@ function onDocumentMouseDown( event ) {
 var render = function () {
   requestAnimationFrame( render );
 
-  //mesh1.rotation.x += 0.01;
-  //mesh1.rotation.y += 0.01;
-  //mesh2.rotation.x += 0.05;
-  //mesh2.rotation.y += 0.05;
-
-
   renderer.setClearColor("#3B454F");
 
   // Render the scene
   renderer.render(scene, camera);
 };
 function animate() {
-   requestAnimationFrame( animate );     // required if controls.enableDamping or controls.autoRotate are set to true
-  controls.update();
+   requestAnimationFrame( animate );
   renderer.render( scene, camera );}
 
 

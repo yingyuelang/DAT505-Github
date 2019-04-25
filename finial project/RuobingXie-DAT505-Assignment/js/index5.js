@@ -10,7 +10,7 @@ var controls;
 
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
-var objects = [];
+var objects = [];// to add the model into objects
 function init(){
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(35, window.innerWidth/window.innerHeight, 300, 10000 );
@@ -22,7 +22,7 @@ function init(){
   texture3=new THREE.TextureLoader().load( 'image/back.png' );
   texture4=new THREE.TextureLoader().load( 'image/next.png' );
     texture5=new THREE.TextureLoader().load( 'image/s5.png' );
-
+  // to load the texture
   var mtlLoader = new THREE.MTLLoader();
 
   mtlLoader.load("model/xuedi.mtl", function(materials){
@@ -97,6 +97,7 @@ function init(){
             scene.add(mesh3);
           });
         });
+                // to load the model
   document.body.appendChild( renderer.domElement );
   document.addEventListener( "mousedown", onDocumentMouseDown, false );
     document.addEventListener( "mousemove", onDocumentMouseMove, false );
@@ -125,15 +126,15 @@ function geometry(){
 
 
 mesh8 = new THREE.Mesh( geometry3, material4 );
-mesh8.userData = { URL: "scene4.html"};
+mesh8.userData = { URL: "scene4.html"};// one of the button
 mesh8.position.set(-50,-70,-300);
 mesh9 = new THREE.Mesh( geometry3, material5 );
 mesh9.position.set(50,-70,-300);
-mesh9.userData = { URL: "scene6.html"};
+mesh9.userData = { URL: "scene6.html"};// one of the button
 mesh10 = new THREE.Mesh( geometry4, material6 );
 mesh10.position.set(-200,110,-500);
 mesh11 = new THREE.Mesh( geometry5, material3 );
-mesh11.position.set(0,300,-1600);
+mesh11.position.set(0,300,-1600);// the background
 scene.add(mesh10);
 scene.add( mesh8 );
 scene.add( mesh9 );
@@ -144,13 +145,12 @@ scene.add(mesh11);
 
   light2 = new THREE.PointLight(0xffffff, 0.3);
   scene.add(light2);
-
+// the scene's light
 }
 
 function onDocumentMouseMove( event ) {
   mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-  //scene.add(mesh3);
   console.log(event.clientX);
   console.log(event.clientY);
   raycaster.setFromCamera( mouse, camera );
@@ -162,8 +162,7 @@ if
    (intersects.length>0&&250<event.clientX <400&&800<event.clientY<1200)
 {scene.add(mesh1)}
 else {scene.remove(mesh1,mesh2)}
-  //console.log(intersects);
-  //window.open(intersects[0].object.userData.URL);
+
 }
 
 function onDocumentMouseDown( event ) {
@@ -175,8 +174,7 @@ function onDocumentMouseDown( event ) {
   var intersects = raycaster.intersectObjects( scene.children );
  if( intersects.length>0) {
    top.location =(intersects[0].object.userData.URL);
-//  top.location ="homepage.html";
-  //scene.add(mesh3);
+// when you click on the button you can go to another scene
   }
 
 }
@@ -184,19 +182,14 @@ function onDocumentMouseDown( event ) {
 var render = function () {
   requestAnimationFrame( render );
 
-  //mesh1.rotation.x += 0.01;
-  //mesh1.rotation.y += 0.01;
-  //mesh2.rotation.x += 0.05;
-  //mesh2.rotation.y += 0.05;
 
 
   renderer.setClearColor("#3B454F");
 
-  // Render the scene
   renderer.render(scene, camera);
 };
 function animate() {
-   requestAnimationFrame( animate );     // required if controls.enableDamping or controls.autoRotate are set to true
+   requestAnimationFrame( animate );
   controls.update();
   renderer.render( scene, camera );}
 

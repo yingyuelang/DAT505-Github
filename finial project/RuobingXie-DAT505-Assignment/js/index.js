@@ -12,7 +12,7 @@ var texture6,texture7;
 var material7;
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
-var objects = [];
+var objects = [];// to add the model into objects
 function init(){
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(35, window.innerWidth/window.innerHeight, 300, 10000 );
@@ -31,7 +31,7 @@ function init(){
   texture5=new THREE.TextureLoader().load( 'image/s1.png' );
   texture6=new THREE.TextureLoader().load( 'image/s1-1.png' );
   texture7=new THREE.TextureLoader().load( 'image/s1-2.png' );
-
+  // to load the texture
   var mtlLoader = new THREE.MTLLoader();
   mtlLoader.load("model/nainai.mtl", function(materials){
   materials.preload();
@@ -128,6 +128,7 @@ function init(){
               objects.push(mesh7)
             });
           });
+          // to load the model
 document.body.appendChild( renderer.domElement );
 document.addEventListener( "mousedown", onDocumentMouseDown, false );
 document.addEventListener( "mousemove", onDocumentMouseMove, false );
@@ -158,15 +159,15 @@ function geometry(){
   mesh2.position.set(-200,100,-500);
 
   mesh8 = new THREE.Mesh( geometry3, material4 );
-  mesh8.userData = { URL: "index.html"};
+  mesh8.userData = { URL: "index.html"};// one of the button
   mesh8.position.set(-50,-100,-300);
   mesh9 = new THREE.Mesh( geometry3, material5 );
   mesh9.position.set(50,-100,-300);
-  mesh9.userData = { URL: "scene2.html"};
+  mesh9.userData = { URL: "scene2.html"};// one of the button
   mesh10 = new THREE.Mesh( geometry4, material6 );
   mesh10.position.set(200,100,-400);
   mesh11 = new THREE.Mesh( geometry5, material3);
-  mesh11.position.set(0,300,-1300);
+  mesh11.position.set(0,300,-1300);// the background
 
 
  scene.add( mesh8 );
@@ -179,7 +180,7 @@ scene.add( mesh11 );
 
   light2 = new THREE.PointLight(0xffffff, 0.3);
   scene.add(light2);
-
+// the scene's light
 
 
 }
@@ -187,7 +188,6 @@ scene.add( mesh11 );
 function onDocumentMouseMove( event ) {
   mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-  //scene.add(mesh3);
   console.log(event.clientX);
   console.log(event.clientY);
   raycaster.setFromCamera( mouse, camera );
@@ -199,6 +199,7 @@ if( intersects.length>0&&event.clientX <300&&event.clientY<600)
    (intersects.length>0&&250<event.clientX <400&&800<event.clientY<1200)
 {scene.add(mesh1)}
 else {scene.remove(mesh1,mesh2)}
+//make sure there will be different  lines appear when the mouse move on different objects
 
 }
 
@@ -211,7 +212,7 @@ function onDocumentMouseDown( event ) {
  if( intersects.length>0) {
    top.location =(intersects[0].object.userData.URL);
   }
-
+// when you click on the button you can go to another scene
 }
 
 
