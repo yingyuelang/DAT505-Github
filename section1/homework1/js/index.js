@@ -21,7 +21,7 @@ function init(){
 ;
 
   // Configure renderer clear color
-  renderer.setClearColor("#000000");
+  renderer.setClearColor("#ffffff");
 
   // Configure renderer size
   renderer.setSize( window.innerWidth, window.innerHeight );

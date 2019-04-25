@@ -1,0 +1,15 @@
+.div{
+	position: relative;
+	top: 0px;
+	right: -100px;
+	z-index: 1;
+}
+.div_2{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	height: 0;
+		z-index: 0;
+}

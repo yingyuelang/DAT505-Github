@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档1</title>
+<link href="style1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<p>&nbsp;</p>
+<p><img src="image/fengmian.png" width="650" height="650" alt=""/>
+	<a href="scene1.html"><img src="image/start.png" alt="" width="400" height="400" class="div_2"/></a></p>
+</body>
+</html>
