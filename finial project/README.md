@@ -1,6 +1,7 @@
 # DAT505-Github XIERUOBING's finial work
 ## B161006095
 ## name: XIERUOBING
+## my github link:https://github.com/yingyuelang/DAT505-Github
 
 
 ## The content of my finial project ----- Crane's Gratitude
@@ -144,6 +145,7 @@ I also make a cover for this project. You can start to read this picture book wh
 
 There is my project's cover:
   ![screen](https://github.com/yingyuelang/DAT505-Github/blob/master/finial%20project/images/7.png)
+
 
 
   ### Thanks for your reading
